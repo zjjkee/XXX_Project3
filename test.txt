@@ -19,3 +19,16 @@ Tested with valgrind to check for memory leaks.
 The test files included in this submission:
 test1 - Tests network dynamics in a network with a central node 
 test2 - Tests network dynamics in a linear network 
+
+We compiled the following test cases to test different aspects of DV and LS routing algorithms.
+
+(1) testcase1
+This test case simulates a 4-node network topology where one link (1,3) has the lowest cost, thus included in the best route for every node. The aim of this test is to check if the nodes update their routes correctly if the link (1,3) dies and re-activates periodically.
+
+(2) testcase2
+This test case simulates a 4-node network topology where one link (1,3) has the lowest cost, thus included in the best route for every node. If the cost of the link (1,3) is modified, then it may or may not be in the best routes for every node. The aim of this test is to check if the nodes update their routes correctly when the cost of the link (1,3) is oscillated during the test.
+Note: This test case also checks if DV routing can prevent count-to-infinity problem by using Poison reverse method.
+
+(3) testcase3
+This test case simulates a complex 10-node network topology with 30 links, where each node has a 0.1 probability of packet loss. The aim of this test case is to run multiple scenarios (i.e links dying/activating, changing link costs) arranged in a random order and check if the routing table is updated accordingly after each scenario. 
+Note: The router might think that a link is dead even though it is active due to the possibility of packet loss. This causes the network topology, and hence the routing tables of the nodes to be updated.
