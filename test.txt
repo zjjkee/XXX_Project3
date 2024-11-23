@@ -1,0 +1,21 @@
+We tested following functions as described: 
+
+ComputeLSShortestPath: tested with disconnected networks, isolated network and some regular networks
+extractPacketData : tested for boundary values
+createPacket: tested for different types of packets (DATA , DV , LS )
+updateLink: checked for new links , links with changed delays
+sendPing: Checked with given test files (simpletest1 and simpletest2)
+updatePortInfo: checked for dead links and links with changed delays
+updateLS: checked for updated and unchanged link values. When at least one link is updated then the shortest path will be computed again.
+updateDV: checked for updated and unchanged table values. Updates table for changed entries and sends changed values to all other nodes.
+sendLSTable: check for size of table, check for avoiding sending dead links
+sendDVTable: check for size of table, check for avoiding sending unreachable destinations.
+
+Behavioural Tests:
+
+Memory:
+Tested with valgrind to check for memory leaks.
+
+The test files included in this submission:
+test1 - Tests network dynamics in a network with a central node 
+test2 - Tests network dynamics in a linear network 

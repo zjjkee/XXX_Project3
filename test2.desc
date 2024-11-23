@@ -1,0 +1,7 @@
+Tests changedelay and linkdying in a line network topology.
+
+      1 --- 2 --- 3 --- 4 --- 5
+
+Tests: 
+1) connectivity of network after linkdying (2,3) and also after linkcomingup (2,3)
+2) delay after changedelay (1,2)
