@@ -32,3 +32,12 @@ Note: This test case also checks if DV routing can prevent count-to-infinity pro
 (3) testcase3
 This test case simulates a complex 10-node network topology with 30 links, where each node has a 0.1 probability of packet loss. The aim of this test case is to run multiple scenarios (i.e links dying/activating, changing link costs) arranged in a random order and check if the routing table is updated accordingly after each scenario. 
 Note: The router might think that a link is dead even though it is active due to the possibility of packet loss. This causes the network topology, and hence the routing tables of the nodes to be updated.
+
+(6) testcase6: data packet arrival
+This test case aims to test if the data packet successfully arrives to the destination.
+
+(7) testcase7: delay time updates
+This test case aims to test if delaly time is updated if the link cost changes.
+
+(8) testcase8: poison reverse for DV
+This test case aims to test the poison-reverse scenario in DV.
